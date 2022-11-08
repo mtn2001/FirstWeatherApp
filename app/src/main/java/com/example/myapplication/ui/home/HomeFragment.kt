@@ -19,6 +19,7 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -39,7 +40,6 @@ import org.json.JSONObject
 
 const val API_KEY = "1eb2a6e25ea14acaa85100714220211"
 class HomeFragment : Fragment() {
-
     private lateinit var fLocationClient: FusedLocationProviderClient
     private val flist = listOf(
         HoursFragment.newInstance(),
@@ -53,7 +53,6 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var pLauncher: ActivityResultLauncher<String>
-    private lateinit var binding2: FragmentHomeBinding
 
     private val model: HomeViewModel by activityViewModels()
     override fun onCreateView(
@@ -70,7 +69,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         checkPermission()
         init()
-        //comm
         updateCurrentCard()
     }
     private fun init() = with(binding) {
@@ -87,14 +85,13 @@ class HomeFragment : Fragment() {
         }
         imageButton7.setOnClickListener{
             dialogManager.serchByName(requireContext(),object : dialogManager.Listener{
-                override fun onClick(name: String?) {
+                override fun onClick(name: String?){
                     Log.d("MyLog", "$name")
                     name?.let { it1 -> reqvestWeatherData(it1) }
                 }
             })
         }
     }
-
     override fun onResume() {
         super.onResume()
         checkLocation()
@@ -144,7 +141,6 @@ class HomeFragment : Fragment() {
             textView8.text = it.condition
             textView9.text = if (it.currentTemp.isEmpty()) "" else maxMinTemp
             Picasso.get().load("https:" + it.imageUrl).into(imageView6)
-            Log.d("MyLog","${it.city} ")
         }
     }
 
