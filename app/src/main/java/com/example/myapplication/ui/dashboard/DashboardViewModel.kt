@@ -3,11 +3,10 @@ package com.example.myapplication.ui.dashboard
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.trydosomething.ui.home.adapters.WetherModel
 
 class DashboardViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
-    }
-    val text: LiveData<String> = _text
+    val liveDataCurrent2 = MutableLiveData<WetherModel>()
+    val liveDataList2 = MutableLiveData<List<WetherModel>>()
 }
