@@ -7,6 +7,6 @@ import com.example.trydosomething.ui.home.adapters.WetherModel
 
 class DashboardViewModel : ViewModel() {
 
-    val liveDataCurrent2 = MutableLiveData<WetherModel>()
-    val liveDataList2 = MutableLiveData<List<WetherModel>>()
+    val liveDataCurrent2 = MutableLiveData<WeatherModelMoreDetalis>()
+    val liveDataList2 = MutableLiveData<List<WeatherModelMoreDetalis>>()
 }

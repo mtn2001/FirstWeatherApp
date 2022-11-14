@@ -53,6 +53,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var pLauncher: ActivityResultLauncher<String>
+    private var isLocationRequestedOnce = false
 
     private val model: HomeViewModel by activityViewModels()
     override fun onCreateView(
@@ -113,11 +114,15 @@ class HomeFragment : Fragment() {
         ) {
             return
         }
-        fLocationClient
-            .getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, ct.token)
-            .addOnCompleteListener {
-                reqvestWeatherData("${it.result.latitude},${it.result.longitude}")
-            }
+        if (!isLocationRequestedOnce) {
+            fLocationClient
+                .getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, ct.token)
+                .addOnCompleteListener {
+                    isLocationRequestedOnce = true
+                    reqvestWeatherData("${it.result.latitude},${it.result.longitude}")
+                }
+        }
+
     }
 
     private fun checkLocation(){
