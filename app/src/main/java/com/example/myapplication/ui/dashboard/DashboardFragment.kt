@@ -56,14 +56,6 @@ class DashboardFragment : Fragment() {
     private fun init() = with(binding) {
         fLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
-        floatingActionButton.setOnClickListener{
-            dialogManager.serchByName(requireContext(),object : dialogManager.Listener{
-                override fun onClick(name: String?){
-                    Log.d("MyLog", "$name")
-                    name?.let { it1 -> reqvestWeatherData(it1) }
-                }
-            })
-        }
     }
     override fun onResume() {
         super.onResume()
@@ -177,29 +169,19 @@ class DashboardFragment : Fragment() {
         return list
     }
 
-    private fun parseCurrentData(mainObject: JSONObject, weatherItem: WeatherModelMoreDetalis): List<WeatherModelMoreDetalis> {
-        val list = ArrayList<WeatherModelMoreDetalis>()
+    private fun parseCurrentData(mainObject: JSONObject, weatherItem: WeatherModelMoreDetalis){
         val daysArray = mainObject.getJSONObject("forecast")
             .getJSONArray("forecastday")
-        for (i in 0 until daysArray.length()) {
-            val day = daysArray[i] as JSONObject
-            val item = WeatherModelMoreDetalis(
-                day.getJSONObject("astro").getString("sunrise"),
-                day.getJSONObject("astro").getString("sunset"),
-                day.getJSONObject("astro").getString("moonrise"),
-                day.getJSONObject("astro").getString("moonset"),
-                day.getJSONObject("astro").getString("moon_phase"),
-                day.getJSONObject("astro").getString("moon_illumination"),
-                ""
-            )
-            list.add(item)
-        }
-        model.liveDataList2.value = list
-        return list
+        val day = daysArray[0] as JSONObject
+        val item = WeatherModelMoreDetalis(
+            day.getJSONObject("astro").getString("sunrise"),
+            day.getJSONObject("astro").getString("sunset"),
+            day.getJSONObject("astro").getString("moonrise"),
+            day.getJSONObject("astro").getString("moonset"),
+            day.getJSONObject("astro").getString("moon_phase"),
+            day.getJSONObject("astro").getString("moon_illumination"),
+            ""
+        )
+        model.liveDataCurrent2.value = item
     }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-
     }
-}

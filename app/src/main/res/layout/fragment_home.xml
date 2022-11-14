@@ -180,8 +180,8 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp"
-        android:layout_width="384dp"
-        android:layout_height="366dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#59BBC8E3"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
