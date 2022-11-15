@@ -198,7 +198,7 @@ class HomeFragment : Fragment() {
         val list = ArrayList<WetherModel>()
         val daysArray = mainObject.getJSONObject("forecast")
             .getJSONArray("forecastday")
-        val name = mainObject.getJSONObject("location").getString("name")
+        val name = mainObject.getJSONObject("location").getString("region")
         for (i in 0 until daysArray.length()) {
             val day = daysArray[i] as JSONObject
             val item = WetherModel(
@@ -220,7 +220,7 @@ class HomeFragment : Fragment() {
     private fun parseCurrentData(mainObject: JSONObject, weatherItem: WetherModel) {
 
         val item = WetherModel(
-            mainObject.getJSONObject("location").getString("name"),
+            mainObject.getJSONObject("location").getString("region"),
             mainObject.getJSONObject("current").getString("last_updated"),
             mainObject.getJSONObject("current")
                 .getJSONObject("condition").getString("text"),

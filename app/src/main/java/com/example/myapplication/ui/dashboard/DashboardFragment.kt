@@ -114,9 +114,9 @@ class DashboardFragment : Fragment() {
             textView13.text = it.sunset
             textView14.text = it.moonrise
             textView15.text = it.moonset
-            textView16.text = it.moon_phase
-            textView17.text = it.moon_illumination
-            textView18.text = it.avghumidity
+            textView17.text = it.moon_phase+" km/h"
+            textView18.text = it.moon_illumination+" %"
+            textView16.text = it.avghumidity+" %"
         }
     }
     private fun reqvestWeatherData(city: String) {
@@ -149,6 +149,7 @@ class DashboardFragment : Fragment() {
     }
 
     private fun parseDays(mainObject: JSONObject): List<WeatherModelMoreDetalis> {
+
         val list = ArrayList<WeatherModelMoreDetalis>()
         val daysArray = mainObject.getJSONObject("forecast")
             .getJSONArray("forecastday")
@@ -170,6 +171,7 @@ class DashboardFragment : Fragment() {
     }
 
     private fun parseCurrentData(mainObject: JSONObject, weatherItem: WeatherModelMoreDetalis){
+
         val daysArray = mainObject.getJSONObject("forecast")
             .getJSONArray("forecastday")
         val day = daysArray[0] as JSONObject
@@ -178,9 +180,9 @@ class DashboardFragment : Fragment() {
             day.getJSONObject("astro").getString("sunset"),
             day.getJSONObject("astro").getString("moonrise"),
             day.getJSONObject("astro").getString("moonset"),
-            day.getJSONObject("astro").getString("moon_phase"),
-            day.getJSONObject("astro").getString("moon_illumination"),
-            ""
+            day.getJSONObject("day").getString("avgvis_km"),
+            day.getJSONObject("day").getString("daily_chance_of_rain"),
+            day.getJSONObject("day").getString("avghumidity"),
         )
         model.liveDataCurrent2.value = item
     }
