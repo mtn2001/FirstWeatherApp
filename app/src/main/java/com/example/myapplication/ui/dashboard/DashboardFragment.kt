@@ -24,7 +24,6 @@ import com.example.myapplication.databinding.FragmentDashboardBinding
 import com.example.myapplication.dialogManager
 import com.example.myapplication.ui.home.API_KEY
 import com.example.myapplication.ui.home.isPermissionGranted
-import com.example.trydosomething.ui.home.adapters.WetherModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority

@@ -11,7 +11,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -19,17 +18,13 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.myapplication.databinding.FragmentHomeBinding
 import com.example.myapplication.dialogManager
-import com.example.trydosomething.ui.home.DaysFragment
-import com.example.trydosomething.ui.home.HoursFragment
 import com.example.trydosomething.ui.home.adapters.VpAdapter
-import com.example.trydosomething.ui.home.adapters.WetherModel
+import com.example.myapplication.ui.home.adapters.WetherModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
@@ -38,7 +33,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
 
-const val API_KEY = "1eb2a6e25ea14acaa85100714220211"
+const val API_KEY = "4db4ba16d0c740e79e962624222011"
 class HomeFragment : Fragment() {
     private lateinit var fLocationClient: FusedLocationProviderClient
     private val flist = listOf(
@@ -71,6 +66,8 @@ class HomeFragment : Fragment() {
         checkPermission()
         init()
         updateCurrentCard()
+
+
     }
     private fun init() = with(binding) {
         fLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
@@ -79,6 +76,7 @@ class HomeFragment : Fragment() {
         vp.adapter = adapter
         TabLayoutMediator(tabLayout, vp) { tab, p ->
             tab.text = tlist[p]
+
         }.attach()
         imageButton.setOnClickListener {
             tabLayout.selectTab(tabLayout.getTabAt(0))
@@ -93,6 +91,7 @@ class HomeFragment : Fragment() {
             })
         }
     }
+
     override fun onResume() {
         super.onResume()
         checkLocation()

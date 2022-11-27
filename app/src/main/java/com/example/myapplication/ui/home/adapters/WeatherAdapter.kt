@@ -1,4 +1,4 @@
-package com.example.trydosomething.ui.home.adapters
+package com.example.myapplication.ui.home.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,8 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.ListItemBinding
 import com.squareup.picasso.Picasso
 
-class WeatherAdapter(val litener: Listener?) : ListAdapter<WetherModel, WeatherAdapter.Holder>(Comparator()){
+class WeatherAdapter(val litener: Listener?) : ListAdapter<WetherModel, WeatherAdapter.Holder>(
+    Comparator()){
     class Holder(view: View, val litener: Listener?) : RecyclerView.ViewHolder(view){
         val binding = ListItemBinding.bind(view)
         var itemTemp: WetherModel? = null

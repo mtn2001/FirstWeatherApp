@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_hero_purple_blue_800x1400_mobile"
-    android:fadeScrollbars="true"
-    android:isScrollContainer="true"
-    android:keepScreenOn="false"
+
     tools:context=".ui.dashboard.DashboardFragment">
 
 
@@ -101,7 +99,7 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="43dp"
             android:layout_marginTop="38dp"
             android:layout_marginBottom="10dp"
             android:text="TextView"
@@ -111,7 +109,7 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
+            android:layout_marginStart="210dp"
             android:layout_marginTop="38dp"
             android:text="TextView"
             android:textSize="14sp" />
@@ -120,7 +118,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="43dp"
             android:layout_marginTop="10dp"
             android:text="Moonrise"
             android:textSize="16sp" />
@@ -129,7 +127,7 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
+            android:layout_marginStart="210dp"
             android:layout_marginTop="10dp"
             android:text="Moonset"
             android:textSize="16sp" />
@@ -138,7 +136,7 @@
             android:id="@+id/imageView4"
             android:layout_width="46dp"
             android:layout_height="46dp"
-            android:layout_marginStart="115dp"
+            android:layout_marginStart="130dp"
             android:layout_marginTop="15dp"
             android:src="@drawable/ic_moon_svgrepo_com" />
 
@@ -146,7 +144,7 @@
             android:id="@+id/imageView5"
             android:layout_width="46dp"
             android:layout_height="46dp"
-            android:layout_marginStart="320dp"
+            android:layout_marginStart="295dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/ic_moon_svgrepo_com__1_" />
@@ -335,8 +333,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="388dp"
+        android:layout_height="243dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -347,8 +345,10 @@
         app:cardMaxElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView5">
+        app:layout_constraintTop_toBottomOf="@+id/cardView5"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView11"
@@ -362,7 +362,7 @@
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView2"
             android:layout_width="369dp"
-            android:layout_height="197dp"
+            android:layout_height="189dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="40dp" />
 

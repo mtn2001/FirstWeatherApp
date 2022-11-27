@@ -1,4 +1,4 @@
-package com.example.trydosomething.ui.home.adapters
+package com.example.myapplication.ui.home.adapters
 
 
 data  class WetherModel (

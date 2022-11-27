@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -35,12 +36,22 @@ android {
 }
 
 dependencies {
+
+    implementation 'androidx.room:room-runtime:2.4.3'
+    implementation 'androidx.room:room-ktx:2.4.3'
+    implementation 'androidx.fragment:fragment-ktx:1.5.4'
+    implementation 'com.google.android.gms:play-services-analytics-impl:18.0.2'
+    kapt "androidx.room:room-compiler:2.4.3"
+    kapt "android.arch.persistence.room:common:1.1.1"
+    def life_ex_ver = '2.2.0-beta01'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$life_ex_ver"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.fragment:fragment-ktx:1.5.4'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation 'androidx.core:core-ktx:1.7.0'
-
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

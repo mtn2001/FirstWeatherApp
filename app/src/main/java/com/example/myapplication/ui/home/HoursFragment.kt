@@ -1,4 +1,4 @@
-package com.example.trydosomething.ui.home
+package com.example.myapplication.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.FragmentHoursBinding
-import com.example.myapplication.ui.home.HomeViewModel
-import com.example.trydosomething.ui.home.adapters.WeatherAdapter
-import com.example.trydosomething.ui.home.adapters.WetherModel
+import com.example.myapplication.ui.home.adapters.WeatherAdapter
+import com.example.myapplication.ui.home.adapters.WetherModel
 
 import org.json.JSONArray
 import org.json.JSONObject
@@ -26,6 +25,7 @@ class HoursFragment : Fragment() {
     ): View? {
         binding = FragmentHoursBinding.inflate(inflater,container,false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,6 +34,7 @@ class HoursFragment : Fragment() {
         model.liveDataCurrent.observe(viewLifecycleOwner){
             adapter.submitList(getHoursList(it))
         }
+
     }
     private fun initRcView() = with(binding){
         rcView.layoutManager = LinearLayoutManager(activity)

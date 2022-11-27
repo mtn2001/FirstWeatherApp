@@ -1,4 +1,4 @@
-package com.example.trydosomething.ui.home
+package com.example.myapplication.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.FragmentDaysBinding
-import com.example.myapplication.ui.home.HomeViewModel
-import com.example.trydosomething.ui.home.adapters.WeatherAdapter
-import com.example.trydosomething.ui.home.adapters.WetherModel
+import com.example.myapplication.ui.home.adapters.WeatherAdapter
+import com.example.myapplication.ui.home.adapters.WetherModel
 
 
 class DaysFragment : Fragment(), WeatherAdapter.Listener {
