@@ -24,7 +24,6 @@ class NotificationsFragment : Fragment() {
         val root: View = binding.root
         return root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
