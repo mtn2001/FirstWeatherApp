@@ -14,7 +14,7 @@
         android:title="More Detalis" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/itemListFragment"
         android:icon="@drawable/ic_heart_svgrepo_com"
         android:title="like" />
 

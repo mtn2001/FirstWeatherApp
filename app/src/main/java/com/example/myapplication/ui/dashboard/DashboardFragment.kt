@@ -77,7 +77,7 @@ class DashboardFragment : Fragment() {
         ) {
             return
         }
-        fLocationClient
+        val addOnCompleteListener = fLocationClient
             .getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, ct.token)
             .addOnCompleteListener {
                 reqvestWeatherData("${it.result.latitude},${it.result.longitude}")
