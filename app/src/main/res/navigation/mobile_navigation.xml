@@ -57,4 +57,9 @@
             android:defaultValue="-1"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.myapplication.ui.news.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
 </navigation>

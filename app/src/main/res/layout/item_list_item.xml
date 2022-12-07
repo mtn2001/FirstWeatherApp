@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView22"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:background="@drawable/ic_hero_purple_blue_800x1400_mobile"
-    >
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="5dp"
+    android:backgroundTint="#80BFCDEC"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp"
+    app:circularflow_defaultRadius="10dp"
+    app:circularflow_radiusInDP="10dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="403dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/ic_hero_purple_blue_800x1400_mobile">
+
 
         <TextView
             android:id="@+id/item_name"
-            android:layout_width="92dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_height="wrap_content"
-            android:text="Item"
-            android:textSize="20dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="345dp"
-            app:srcCompat="@drawable/ic_delete_svgrepo_com" />
-    </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text=""
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="325dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_delete_svgrepo_com"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+</androidx.cardview.widget.CardView>

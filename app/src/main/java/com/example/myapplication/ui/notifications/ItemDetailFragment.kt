@@ -61,6 +61,7 @@ class ItemDetailFragment : Fragment() {
         binding.apply {
             itemName.text = item.itemName
             deleteItem.setOnClickListener { showConfirmationDialog() }
+
         }
     }
 

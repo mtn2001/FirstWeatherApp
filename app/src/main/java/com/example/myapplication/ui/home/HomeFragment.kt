@@ -23,7 +23,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.myapplication.databinding.FragmentHomeBinding
 import com.example.myapplication.dialogManager
-import com.example.trydosomething.ui.home.adapters.VpAdapter
+import com.example.myapplication.ui.home.adapters.VpAdapter
 import com.example.myapplication.ui.home.adapters.WetherModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -33,7 +33,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
 
-const val API_KEY = "4db4ba16d0c740e79e962624222011"
+const val API_KEY = "f9bfd5cb61614aa6ab791759220612"
 class HomeFragment : Fragment() {
     private lateinit var fLocationClient: FusedLocationProviderClient
     private val flist = listOf(
