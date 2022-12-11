@@ -50,7 +50,6 @@ fun GameCard(game: NewsItem) {
             .fillMaxSize()
 
     ) {
-
         Column {
 
             Image(
