@@ -18,7 +18,7 @@
         android:icon="@drawable/ic_heart_svgrepo_com"
         android:title="like" />
     <item
-        android:id="@+id/newsFragment"
+        android:id="@+id/mainActivity22"
         android:icon="@drawable/ic_cold_svgrepo_com"
         android:title="News" />
 
